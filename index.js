@@ -531,6 +531,8 @@ Browserify.prototype._createDeps = function (opts) {
     }).map(function (x) {
         return path.resolve(basedir, x);
     });
+    // set absolute noParse for browser-deps
+    mopts.noParse = absno;
     
     function globalTr (file) {
         if (opts.detectGlobals === false) return through();
